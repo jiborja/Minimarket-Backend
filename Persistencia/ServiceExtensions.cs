@@ -1,9 +1,9 @@
-using Application.Interfaces;
+using Persistencia.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Persistence.Repository;
-using Persistencia.Inventario.Context;
+using Persistencia.Repository;
+using Persistencia.Contexts;
 
 namespace Persistencia
 {
@@ -16,7 +16,7 @@ namespace Persistencia
             //     configuration.GetConnectionString("SqlServer"),
             //     b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)
             // ));
-            service.AddDbContext<InventarioDbContext>(options => options.UseSqlite(configuration.GetConnectionString("SqlLite")));
+            service.AddDbContext<InventarioDbContext>(options => options.UseSqlite(configuration.GetConnectionString("Sqlite")));
 
             #region Repositories
             service.AddTransient(typeof(IRepositoryAsync<>), typeof(MyRepositoryAsync<>));

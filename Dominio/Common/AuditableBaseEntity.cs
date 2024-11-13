@@ -1,6 +1,4 @@
-using System;
-
-namespace Domain.Common
+namespace Dominio.Common
 {
     public abstract class AuditableBaseEntity
     {

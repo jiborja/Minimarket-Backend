@@ -1,6 +1,6 @@
 using Ardalis.Specification;
 
-namespace Application.Interfaces
+namespace Persistencia.Interfaces
 {
     public interface IRepositoryAsync<T> : IRepositoryBase<T> where T : class
     {

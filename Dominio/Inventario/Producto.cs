@@ -1,12 +1,12 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Domain.Common;
+using Dominio.Common;
 
 namespace Dominio.Inventario
 {
     [Table("Actividad")]
-    public class Productos: AuditableBaseEntity
+    public class Producto: AuditableBaseEntity
     {
         public required string Nombre {get;set;}
         public required string Descripcion {get;set;}

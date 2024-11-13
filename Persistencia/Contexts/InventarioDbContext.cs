@@ -1,9 +1,9 @@
 using System.Reflection;
-using Domain.Common;
+using Dominio.Common;
 using Dominio.Inventario;
 using Microsoft.EntityFrameworkCore;
 
-namespace Persistencia.Inventario.Context
+namespace Persistencia.Contexts
 {
     public class InventarioDbContext : DbContext
     {
@@ -12,7 +12,10 @@ namespace Persistencia.Inventario.Context
             ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
         }
 
-        public DbSet<Categorias> Categorias { get; set; }
+        public DbSet<Categoria> Categoria { get; set; }
+        public DbSet<Marca> Marca { get; set; }
+        public DbSet<Producto> Producto { get; set; }
+        public DbSet<UnidadMedida> UnidadMedida { get; set; }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
         {

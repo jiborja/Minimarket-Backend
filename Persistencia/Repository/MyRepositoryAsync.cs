@@ -1,13 +1,13 @@
-using Application.Interfaces;
 using Ardalis.Specification.EntityFrameworkCore;
-using Persistencia.Inventario.Context;
+using Persistencia.Interfaces;
+using Persistencia.Contexts;
 
-namespace Persistence.Repository
+namespace Persistencia.Repository
 {
     public class MyRepositoryAsync<T> : RepositoryBase<T>, IRepositoryAsync<T> where T : class
     {
-        private readonly ApplicationDbContext _dbContext;
-        public MyRepositoryAsync(ApplicationDbContext dbContext) : base (dbContext)
+        private readonly InventarioDbContext _dbContext;
+        public MyRepositoryAsync(InventarioDbContext dbContext) : base (dbContext)
         {
             _dbContext = dbContext;
         }
